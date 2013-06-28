@@ -1,0 +1,149 @@
+﻿<?xml version='1.0' encoding='UTF8'?>
+<grafo name="levelTest">
+	<tile id="0" x="0" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="1" x="0" y="0" z="1" h="1" tipo="LAVA" />
+	<tile id="2" x="0" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="3" x="0" y="0" z="3" h="1" tipo="PLAIN" />
+	<tile id="4" x="0" y="0" z="4" h="1" tipo="PLAIN" />
+	<tile id="5" x="0" y="0" z="5" h="1" tipo="PLAIN" />
+
+	<tile id="6"  x="1" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="7"  x="1" y="0" z="1" h="1" tipo="LAVA" />
+	<tile id="8"  x="1" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="9"  x="1" y="0" z="3" h="1" tipo="PLAIN" />
+	<tile id="10" x="1" y="0" z="4" h="1" tipo="PLAIN" />
+	<tile id="11" x="1" y="0" z="5" h="1" tipo="PLAIN" />
+
+	<tile id="12" x="2" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="13" x="2" y="0" z="1" h="1" tipo="LAVA" />
+	<tile id="14" x="2" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="15" x="2" y="0" z="3" h="2" tipo="PLAIN" />
+	<tile id="16" x="2" y="0" z="4" h="2" tipo="PLAIN" />
+	<tile id="17" x="2" y="0" z="5" h="2" tipo="PLAIN" />
+
+	<tile id="18" x="3" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="19" x="3" y="0" z="1" h="1" tipo="LAVA" />
+	<tile id="20" x="3" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="21" x="3" y="0" z="3" h="1" tipo="PLAIN" />
+	<tile id="22" x="3" y="0" z="4" h="1" tipo="PLAIN" />
+	<tile id="23" x="3" y="0" z="5" h="1" tipo="PLAIN" />
+
+	<tile id="24" x="4" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="25" x="4" y="0" z="1" h="1" tipo="LAVA" />
+	<tile id="26" x="4" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="27" x="4" y="0" z="3" h="1" tipo="LAVA" />
+	<tile id="28" x="4" y="0" z="4" h="1" tipo="PLAIN" />
+	<tile id="29" x="4" y="0" z="5" h="1" tipo="PLAIN" />
+
+	<tile id="30" x="5" y="0" z="0" h="1" tipo="PLAIN" />
+	<tile id="31" x="5" y="0" z="1" h="1" tipo="PLAIN" />
+	<tile id="32" x="5" y="0" z="2" h="1" tipo="PLAIN" />
+	<tile id="33" x="5" y="0" z="3" h="1" tipo="LAVA" />
+	<tile id="34" x="5" y="0" z="4" h="1" tipo="PLAIN" />
+	<tile id="35" x="5" y="0" z="5" h="1" tipo="PLAIN" />
+
+
+	<arco origem="0" destino="1" tipo="SIMPLE"/>
+	<arco origem="0" destino="6" tipo="SIMPLE"/>
+
+	<arco origem="1" destino="2" tipo="SIMPLE"/>
+	<arco origem="1" destino="7" tipo="SIMPLE"/>
+
+	<arco origem="2" destino="3" tipo="SIMPLE"/>
+	<arco origem="2" destino="8" tipo="SIMPLE"/>
+
+	<arco origem="3" destino="4" tipo="SIMPLE"/>
+	<arco origem="3" destino="9" tipo="SIMPLE"/>
+
+	<arco origem="4" destino="5" tipo="SIMPLE"/>
+	<arco origem="4" destino="10" tipo="SIMPLE"/>
+
+	<arco origem="5" destino="11" tipo="SIMPLE"/>
+
+
+	<arco origem="6" destino="7" tipo="SIMPLE"/>
+	<arco origem="6" destino="12" tipo="SIMPLE"/>
+
+	<arco origem="7" destino="8" tipo="SIMPLE"/>
+	<arco origem="7" destino="13" tipo="SIMPLE"/>
+
+	<arco origem="8" destino="9" tipo="SIMPLE"/>
+	<arco origem="8" destino="14" tipo="SIMPLE"/>
+
+	<arco origem="9" destino="10" tipo="SIMPLE"/>
+	<arco origem="9" destino="15" tipo="SIMPLE"/>
+
+	<arco origem="10" destino="11" tipo="SIMPLE"/>
+	<arco origem="10" destino="16" tipo="SIMPLE"/>
+
+	<arco origem="11" destino="17" tipo="SIMPLE"/>
+
+
+	<arco origem="12" destino="13" tipo="SIMPLE"/>
+	<arco origem="12" destino="18" tipo="SIMPLE"/>
+
+	<arco origem="13" destino="14" tipo="SIMPLE"/>
+	<arco origem="13" destino="19" tipo="SIMPLE"/>
+
+	<arco origem="14" destino="15" tipo="SIMPLE"/>
+	<arco origem="14" destino="20" tipo="SIMPLE"/>
+
+	<arco origem="15" destino="16" tipo="SIMPLE"/>
+	<arco origem="15" destino="21" tipo="SIMPLE"/>
+
+	<arco origem="16" destino="17" tipo="SIMPLE"/>
+	<arco origem="16" destino="22" tipo="SIMPLE"/>
+
+	<arco origem="17" destino="23" tipo="SIMPLE"/>
+
+
+	<arco origem="18" destino="19" tipo="SIMPLE"/>
+	<arco origem="18" destino="24" tipo="SIMPLE"/>
+
+	<arco origem="19" destino="20" tipo="SIMPLE"/>
+	<arco origem="19" destino="25" tipo="SIMPLE"/>
+
+	<arco origem="20" destino="21" tipo="SIMPLE"/>
+	<arco origem="20" destino="26" tipo="SIMPLE"/>
+
+	<arco origem="21" destino="22" tipo="SIMPLE"/>
+	<arco origem="21" destino="27" tipo="SIMPLE"/>
+
+	<arco origem="22" destino="23" tipo="SIMPLE"/>
+	<arco origem="22" destino="28" tipo="SIMPLE"/>
+
+	<arco origem="23" destino="29" tipo="SIMPLE"/>
+
+
+	<arco origem="24" destino="25" tipo="SIMPLE"/>
+	<arco origem="24" destino="30" tipo="SIMPLE"/>
+
+	<arco origem="25" destino="26" tipo="SIMPLE"/>
+	<arco origem="25" destino="31" tipo="SIMPLE"/>
+
+	<arco origem="26" destino="27" tipo="SIMPLE"/>
+	<arco origem="26" destino="32" tipo="SIMPLE"/>
+
+	<arco origem="27" destino="28" tipo="SIMPLE"/>
+	<arco origem="27" destino="33" tipo="SIMPLE"/>
+
+	<arco origem="28" destino="29" tipo="SIMPLE"/>
+	<arco origem="28" destino="34" tipo="SIMPLE"/>
+
+	<arco origem="29" destino="35" tipo="SIMPLE"/>
+
+
+	<arco origem="30" destino="31" tipo="SIMPLE"/>
+
+	<arco origem="31" destino="32" tipo="SIMPLE"/>
+
+	<arco origem="32" destino="33" tipo="SIMPLE"/>
+
+	<arco origem="33" destino="34" tipo="SIMPLE"/>
+
+	<arco origem="34" destino="35" tipo="SIMPLE"/>
+
+
+	<arco origem="12" destino="14" tipo="DJUMP"/>
+	<arco origem="32" destino="34" tipo="DJUMP"/>
+</grafo>
