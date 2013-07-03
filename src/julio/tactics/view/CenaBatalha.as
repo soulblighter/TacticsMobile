@@ -21,6 +21,7 @@
 	import julio.AssetsManager;
 	import julio.iso.*;
 	import julio.iso.events.TerrainBlockEvent;
+	import julio.resource.ICharAsset;
 	import julio.scenegraph.*;
 	import julio.tactics.*;
 //	import julio.tactics.display.ActionsPanel;
@@ -546,15 +547,15 @@
 			//	<char id="0" pos="0"> <display asset="Fighter_high"/> </char>
 			
 //			var assetClass:Class = _queueLoader.getItemByTitle(data.display.@asset).loader.contentLoaderInfo.applicationDomain.getDefinition("ImageAsset");
-			var assetClass:Object = this._assets.getChar(String(data.display.@asset));
+			var assetClass:ICharAsset = this._assets.getChar(String(data.display.@asset));
 			
 			var pos3d:Number3D = map.getPos(data.@pos);
 			var char_x:int = pos3d.x;
 			var char_z:int = pos3d.z;
 			var char_y:int = pos3d.y; // map.getHeight(char_x, char_y); //
 			
-			if (!assetClass["isCached"])
-				assetClass["cache"]();
+			if (!assetClass.isCached())
+				assetClass.cache();
 			
 			var cNode:CharSpriteNode = new CharSpriteNode(assetClass, new Number3D(char_x * tileSize.x + tileSize.x / 2, char_y * tileSize.y, char_z * tileSize.z + tileSize.z / 2), new Quaternion(0, 1, 0, Math.PI / 2), new Number3D(30, 70, 30), data.@id);
 //			cNode.local_pos_y = char_y*map.size.y; // map.getHeight( cNode.local_pos_x, cNode.local_pos_z );

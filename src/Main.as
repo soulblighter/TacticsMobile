@@ -10,11 +10,12 @@ package
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
 	import flash.events.TimerEvent;
+	import julio.resource.RedKnight;
 	import julio.tactics.view.CenaBatalha;
-	import julio.AssetsManager;
 	import julio.tactics.regras.GURPS.batalha.Batalha;
 	import flash.events.EventDispatcher;
 	import julio.tactics.events.GameEvent;
+	import julio.AssetsManager;
 	
 	
 	/**
@@ -32,7 +33,6 @@ package
 		public var _timer:Timer;
 		public var _fpsCurrentTime:Number;
 		public var _fpsTimeDelta:Number;
-		
 		
 		private var gameData:XML;
 		private var assetsData:XML;
@@ -90,13 +90,14 @@ package
 			conm.addEventListener(GameEvent.FINISHED_LOADING, initTactics, false, 0, false);
 			assetsData =
 						<assets>
-							<asset id="0" name="Fighter_high"	type="char" path="assets/Fighter_high_dbg.swf"/>
-							<asset id="2" name="tiles"			type="tile" path="assets/tiles2.gif" rows="3" cols="3"/>
-							<asset id="3" name="defense_tiles"	type="tile" path="assets/defense_tiles.gif" rows="4" cols="3"/>
-							<asset id="4" name="map"			type="graph" path="assets/level3.xml"/>
-							<asset id="5" name="defense_map"	type="graph" path="assets/defense_lvl_1.xml"/>
+							<asset id="0" name="Fighter_high"	type="char" path="../../assets/Fighter_high_dbg.swf"/>
+							<asset id="2" name="tiles"			type="tile" path="../../assets/tiles2.gif" rows="3" cols="3"/>
+							<asset id="3" name="defense_tiles"	type="tile" path="../../assets/defense_tiles.gif" rows="4" cols="3"/>
+							<asset id="4" name="map"			type="graph" path="../../assets/level3.xml"/>
+							<asset id="5" name="defense_map"	type="graph" path="../../assets/defense_lvl_1.xml"/>
 						</assets>;
 			assets = new AssetsManager(conm, assetsData);
+			assets.startLoading();
 			
 			
 			
@@ -310,6 +311,7 @@ package
 					
 				</battle>;
 			
+			var redKnight:RedKnight = new RedKnight();
 			this.addChild(new CenaBatalha(conm, assets));
 			
 			var b:Batalha = new Batalha(conm, gameData);

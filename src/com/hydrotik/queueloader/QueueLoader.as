@@ -37,7 +37,6 @@ package com.hydrotik.queueloader {
 	import flash.system.Capabilities;
 	import flash.system.LoaderContext;
 	import flash.utils.Timer;
-	import flash.filesystem.File;
 	
 	import com.hydrotik.queueloader.QueueLoaderEvent;		
 
@@ -205,7 +204,7 @@ package com.hydrotik.queueloader {
 			}else{
 				fileType = info.mimeType;
 			}
-			var urlReq:URLRequest = new URLRequest(new File(strip[0] + ((getMode() && urlVars.length > 1) ? urlVars : "").url));
+			var urlReq:URLRequest = new URLRequest(strip[0] + ((getMode() && urlVars.length > 1) ? urlVars : ""));
 			for(i in ItemList.itemArray) if(int(i)==fileType) _loadingQueue.splice(index, 0, new (ItemList.itemArray[int(i)].classRef)(urlReq, container, info, _loaderContext, int(i)) as ILoadable);
 			
 		}

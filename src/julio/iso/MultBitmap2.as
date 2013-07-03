@@ -17,7 +17,7 @@
 //		private var _buffer:BitmapData;
 		
 		// O buffer que amazena cada imagem do bitmap
-		private var _bitmaps:Array;
+		private var _bitmaps:Vector.<BitmapData>;
 		
 		// Numero de imagens q tem no bitmap
 		private var _numImagens:int;
@@ -72,7 +72,7 @@
 			_width = _buffer.width / coluns;
 			_height = _buffer.height / rows;
 			
-			_bitmaps = new Array;
+			_bitmaps = new Vector.<BitmapData>;
 			for ( var i:uint = 0; i < _numImagens; i++ )
 			{
 				var w:int = Math.floor(i % _coluns) * _rect.width;
@@ -80,7 +80,7 @@
 				
 				var bitmapData:BitmapData = new BitmapData( _width, _height, _transparent, 0x00000000);
 				bitmapData.copyPixels(_buffer, new Rectangle(w, h, w + _width, h + _height), new Point(0, 0));
-				_bitmaps.addItem( bitmapData );
+				_bitmaps.push( bitmapData );
 //				_bitmaps.addItem( new Bitmap(bitmapData, pixelSnapping, smoothing) );
 			}
 			
@@ -91,7 +91,7 @@
 		
 		public function getImage( i:uint ):Bitmap
 		{
-			return new Bitmap( _bitmaps.getItemAt(i) as BitmapData, _pixelSnapping, _smoothing );
+			return new Bitmap( _bitmaps[i] as BitmapData, _pixelSnapping, _smoothing );
 		}
 	}
 }

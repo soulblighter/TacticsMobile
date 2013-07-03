@@ -1,0 +1,6 @@
+
+rename 's/\ /_/g' *.bmp
+
+
+for f in *.bmp; do convert $f  -transparent '#6F4F33'   ${f%.png}; done
+

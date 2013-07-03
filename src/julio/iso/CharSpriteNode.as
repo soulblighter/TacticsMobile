@@ -7,6 +7,7 @@
 	import flash.media.SoundChannel;
 	import julio.iso.*;
 	import julio.scenegraph.*;
+	import julio.resource.ICharAsset;
 //	import br.com.stimuli.loading.BulkProgressEvent;
 //	import br.com.stimuli.loading.lazyloaders.LazyXMLLoader;
 	
@@ -39,11 +40,11 @@
 		// Loader utilizado para carregar o swf com as animações
 //		private var _loader2:Loader;
 		
-		public function CharSpriteNode( charAsset:Object, pos:Number3D, rot:Quaternion, size:Number3D, nodeName:String, renderPriority:uint = 0, onlyDefaultRender:Boolean = false )
+		public function CharSpriteNode( charAsset:ICharAsset, pos:Number3D, rot:Quaternion, size:Number3D, nodeName:String, renderPriority:uint = 0, onlyDefaultRender:Boolean = false )
 		{
 			super(Bitmap, pos, rot, size, nodeName, renderPriority, onlyDefaultRender);
 			
-			var desc:XML = charAsset["desc"];
+			var desc:XML = charAsset.desc();
 			
 			_animations = new Object;
 			for each( var s:XML in desc.anim )
@@ -77,7 +78,7 @@
 			for ( var a2:String in _animations )
 				for ( var b2:int = 0; b2 < _aniDir.length; b2++ )
 					for ( var c2:int = 0; c2 < _animations[a2]; c2++ )
-						_frames[a2][_aniDir[b2]].push( charAsset["data"](a2 + "_" + _aniDir[b2] + "_" + c2) );
+						_frames[a2][_aniDir[b2]].push( charAsset.data(a2, _aniDir[b2], c2) );
 			
 //						_frames[a2][_aniDir[b2]].push( CharAsset["data"](a2+"_"+_aniDir[b2]+"_"+c2) as BitmapData );
 			
@@ -161,6 +162,7 @@
 		
 		public override function draw( viewName:String ):void
 		{
+//			trace("CharSpriteNode::draw() "+ _currentAnim + "/" + _currentDir + "/" + frameNr);
 			if( _frames[_currentAnim][_currentDir][frameNr] )
 				this._instances[viewName].bitmapData = _frames[_currentAnim][_currentDir][frameNr].bitmapData;
 //				this._instances[viewName].bitmapData = _frames[_currentAnim][_currentDir][_frameNr];
