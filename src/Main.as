@@ -12,7 +12,7 @@ package
 	import flash.events.TimerEvent;
 	import julio.resource.RedKnight;
 	import julio.tactics.view.CenaBatalha;
-	import julio.tactics.regras.GURPS.batalha.Batalha;
+	import julio.tactics.regras.Basic.Batalha;
 	import flash.events.EventDispatcher;
 	import julio.tactics.events.GameEvent;
 	import julio.AssetsManager;

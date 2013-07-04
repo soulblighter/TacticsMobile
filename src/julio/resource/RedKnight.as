@@ -1,176 +1,485 @@
 package julio.resource 
 {
-	import flash.display.BitmapData;
-	import flash.display.Bitmap;
-	import flash.globalization.NumberFormatter;
 	/**
 	 * ...
 	 * @author Soulblighter
 	 */
-	public class RedKnight implements ICharAsset 
+	public class RedKnight extends CharAsset 
 	{
+		[Embed(source = '../../../assets/red_knight/attack_e0000.png')]	public var attack_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0001.png')]	public var attack_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0002.png')]	public var attack_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0003.png')]	public var attack_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0004.png')]	public var attack_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0005.png')]	public var attack_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0006.png')]	public var attack_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0007.png')]	public var attack_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0008.png')]	public var attack_e0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0009.png')]	public var attack_e0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0010.png')]	public var attack_e0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0011.png')]	public var attack_e0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_e0012.png')]	public var attack_e0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0000.png')]	public var attack_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0001.png')]	public var attack_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0002.png')]	public var attack_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0003.png')]	public var attack_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0004.png')]	public var attack_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0005.png')]	public var attack_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0006.png')]	public var attack_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0007.png')]	public var attack_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0008.png')]	public var attack_n0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0009.png')]	public var attack_n0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0010.png')]	public var attack_n0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0011.png')]	public var attack_n0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_n0012.png')]	public var attack_n0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0000.png')]	public var attack_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0001.png')]	public var attack_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0002.png')]	public var attack_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0003.png')]	public var attack_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0004.png')]	public var attack_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0005.png')]	public var attack_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0006.png')]	public var attack_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0007.png')]	public var attack_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0008.png')]	public var attack_ne0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0009.png')]	public var attack_ne0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0010.png')]	public var attack_ne0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0011.png')]	public var attack_ne0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_ne0012.png')]	public var attack_ne0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0000.png')]	public var attack_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0001.png')]	public var attack_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0002.png')]	public var attack_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0003.png')]	public var attack_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0004.png')]	public var attack_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0005.png')]	public var attack_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0006.png')]	public var attack_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0007.png')]	public var attack_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0008.png')]	public var attack_nw0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0009.png')]	public var attack_nw0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0010.png')]	public var attack_nw0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0011.png')]	public var attack_nw0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_nw0012.png')]	public var attack_nw0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0000.png')]	public var attack_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0001.png')]	public var attack_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0002.png')]	public var attack_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0003.png')]	public var attack_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0004.png')]	public var attack_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0005.png')]	public var attack_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0006.png')]	public var attack_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0007.png')]	public var attack_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0008.png')]	public var attack_s0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0009.png')]	public var attack_s0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0010.png')]	public var attack_s0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0011.png')]	public var attack_s0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_s0012.png')]	public var attack_s0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0000.png')]	public var attack_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0001.png')]	public var attack_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0002.png')]	public var attack_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0003.png')]	public var attack_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0004.png')]	public var attack_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0005.png')]	public var attack_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0006.png')]	public var attack_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0007.png')]	public var attack_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0008.png')]	public var attack_se0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0009.png')]	public var attack_se0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0010.png')]	public var attack_se0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0011.png')]	public var attack_se0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_se0012.png')]	public var attack_se0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0000.png')]	public var attack_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0001.png')]	public var attack_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0002.png')]	public var attack_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0003.png')]	public var attack_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0004.png')]	public var attack_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0005.png')]	public var attack_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0006.png')]	public var attack_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0007.png')]	public var attack_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0008.png')]	public var attack_sw0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0009.png')]	public var attack_sw0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0010.png')]	public var attack_sw0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0011.png')]	public var attack_sw0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_sw0012.png')]	public var attack_sw0012:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0000.png')]	public var attack_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0001.png')]	public var attack_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0002.png')]	public var attack_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0003.png')]	public var attack_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0004.png')]	public var attack_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0005.png')]	public var attack_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0006.png')]	public var attack_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0007.png')]	public var attack_w0007:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0008.png')]	public var attack_w0008:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0009.png')]	public var attack_w0009:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0010.png')]	public var attack_w0010:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0011.png')]	public var attack_w0011:Class;
+		[Embed(source = '../../../assets/red_knight/attack_w0012.png')]	public var attack_w0012:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0000.png')]	public var been_hit_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0001.png')]	public var been_hit_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0002.png')]	public var been_hit_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0003.png')]	public var been_hit_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0004.png')]	public var been_hit_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0005.png')]	public var been_hit_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0006.png')]	public var been_hit_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0007.png')]	public var been_hit_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_e0008.png')]	public var been_hit_e0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0000.png')]	public var been_hit_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0001.png')]	public var been_hit_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0002.png')]	public var been_hit_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0003.png')]	public var been_hit_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0004.png')]	public var been_hit_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0005.png')]	public var been_hit_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0006.png')]	public var been_hit_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0007.png')]	public var been_hit_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_n0008.png')]	public var been_hit_n0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0000.png')]	public var been_hit_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0001.png')]	public var been_hit_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0002.png')]	public var been_hit_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0003.png')]	public var been_hit_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0004.png')]	public var been_hit_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0005.png')]	public var been_hit_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0006.png')]	public var been_hit_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0007.png')]	public var been_hit_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_ne0008.png')]	public var been_hit_ne0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0000.png')]	public var been_hit_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0001.png')]	public var been_hit_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0002.png')]	public var been_hit_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0003.png')]	public var been_hit_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0004.png')]	public var been_hit_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0005.png')]	public var been_hit_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0006.png')]	public var been_hit_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0007.png')]	public var been_hit_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_nw0008.png')]	public var been_hit_nw0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0000.png')]	public var been_hit_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0001.png')]	public var been_hit_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0002.png')]	public var been_hit_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0003.png')]	public var been_hit_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0004.png')]	public var been_hit_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0005.png')]	public var been_hit_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0006.png')]	public var been_hit_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0007.png')]	public var been_hit_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_s0008.png')]	public var been_hit_s0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0000.png')]	public var been_hit_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0001.png')]	public var been_hit_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0002.png')]	public var been_hit_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0003.png')]	public var been_hit_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0004.png')]	public var been_hit_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0005.png')]	public var been_hit_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0006.png')]	public var been_hit_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0007.png')]	public var been_hit_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_se0008.png')]	public var been_hit_se0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0000.png')]	public var been_hit_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0001.png')]	public var been_hit_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0002.png')]	public var been_hit_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0003.png')]	public var been_hit_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0004.png')]	public var been_hit_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0005.png')]	public var been_hit_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0006.png')]	public var been_hit_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0007.png')]	public var been_hit_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_sw0008.png')]	public var been_hit_sw0008:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0000.png')]	public var been_hit_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0001.png')]	public var been_hit_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0002.png')]	public var been_hit_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0003.png')]	public var been_hit_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0004.png')]	public var been_hit_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0005.png')]	public var been_hit_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0006.png')]	public var been_hit_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0007.png')]	public var been_hit_w0007:Class;
+		[Embed(source = '../../../assets/red_knight/been_hit_w0008.png')]	public var been_hit_w0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0000.png')]	public var greeting_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0001.png')]	public var greeting_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0002.png')]	public var greeting_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0003.png')]	public var greeting_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0004.png')]	public var greeting_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0005.png')]	public var greeting_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0006.png')]	public var greeting_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0007.png')]	public var greeting_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_e0008.png')]	public var greeting_e0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0000.png')]	public var greeting_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0001.png')]	public var greeting_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0002.png')]	public var greeting_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0003.png')]	public var greeting_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0004.png')]	public var greeting_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0005.png')]	public var greeting_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0006.png')]	public var greeting_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0007.png')]	public var greeting_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_n0008.png')]	public var greeting_n0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0000.png')]	public var greeting_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0001.png')]	public var greeting_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0002.png')]	public var greeting_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0003.png')]	public var greeting_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0004.png')]	public var greeting_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0005.png')]	public var greeting_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0006.png')]	public var greeting_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0007.png')]	public var greeting_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_ne0008.png')]	public var greeting_ne0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0000.png')]	public var greeting_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0001.png')]	public var greeting_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0002.png')]	public var greeting_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0003.png')]	public var greeting_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0004.png')]	public var greeting_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0005.png')]	public var greeting_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0006.png')]	public var greeting_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0007.png')]	public var greeting_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_nw0008.png')]	public var greeting_nw0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0000.png')]	public var greeting_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0001.png')]	public var greeting_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0002.png')]	public var greeting_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0003.png')]	public var greeting_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0004.png')]	public var greeting_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0005.png')]	public var greeting_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0006.png')]	public var greeting_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0007.png')]	public var greeting_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_s0008.png')]	public var greeting_s0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0000.png')]	public var greeting_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0001.png')]	public var greeting_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0002.png')]	public var greeting_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0003.png')]	public var greeting_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0004.png')]	public var greeting_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0005.png')]	public var greeting_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0006.png')]	public var greeting_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0007.png')]	public var greeting_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_se0008.png')]	public var greeting_se0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0000.png')]	public var greeting_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0001.png')]	public var greeting_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0002.png')]	public var greeting_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0003.png')]	public var greeting_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0004.png')]	public var greeting_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0005.png')]	public var greeting_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0006.png')]	public var greeting_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0007.png')]	public var greeting_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_sw0008.png')]	public var greeting_sw0008:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0000.png')]	public var greeting_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0001.png')]	public var greeting_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0002.png')]	public var greeting_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0003.png')]	public var greeting_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0004.png')]	public var greeting_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0005.png')]	public var greeting_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0006.png')]	public var greeting_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0007.png')]	public var greeting_w0007:Class;
+		[Embed(source = '../../../assets/red_knight/greeting_w0008.png')]	public var greeting_w0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0000.png')]	public var paused_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0001.png')]	public var paused_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0002.png')]	public var paused_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0003.png')]	public var paused_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0004.png')]	public var paused_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0005.png')]	public var paused_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0006.png')]	public var paused_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0007.png')]	public var paused_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_e0008.png')]	public var paused_e0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0000.png')]	public var paused_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0001.png')]	public var paused_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0002.png')]	public var paused_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0003.png')]	public var paused_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0004.png')]	public var paused_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0005.png')]	public var paused_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0006.png')]	public var paused_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0007.png')]	public var paused_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_n0008.png')]	public var paused_n0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0000.png')]	public var paused_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0001.png')]	public var paused_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0002.png')]	public var paused_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0003.png')]	public var paused_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0004.png')]	public var paused_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0005.png')]	public var paused_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0006.png')]	public var paused_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0007.png')]	public var paused_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_ne0008.png')]	public var paused_ne0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0000.png')]	public var paused_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0001.png')]	public var paused_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0002.png')]	public var paused_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0003.png')]	public var paused_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0004.png')]	public var paused_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0005.png')]	public var paused_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0006.png')]	public var paused_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0007.png')]	public var paused_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_nw0008.png')]	public var paused_nw0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0000.png')]	public var paused_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0001.png')]	public var paused_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0002.png')]	public var paused_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0003.png')]	public var paused_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0004.png')]	public var paused_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0005.png')]	public var paused_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0006.png')]	public var paused_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0007.png')]	public var paused_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_s0008.png')]	public var paused_s0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0000.png')]	public var paused_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0001.png')]	public var paused_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0002.png')]	public var paused_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0003.png')]	public var paused_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0004.png')]	public var paused_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0005.png')]	public var paused_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0006.png')]	public var paused_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0007.png')]	public var paused_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_se0008.png')]	public var paused_se0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0000.png')]	public var paused_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0001.png')]	public var paused_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0002.png')]	public var paused_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0003.png')]	public var paused_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0004.png')]	public var paused_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0005.png')]	public var paused_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0006.png')]	public var paused_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0007.png')]	public var paused_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_sw0008.png')]	public var paused_sw0008:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0000.png')]	public var paused_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0001.png')]	public var paused_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0002.png')]	public var paused_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0003.png')]	public var paused_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0004.png')]	public var paused_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0005.png')]	public var paused_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0006.png')]	public var paused_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0007.png')]	public var paused_w0007:Class;
+		[Embed(source = '../../../assets/red_knight/paused_w0008.png')]	public var paused_w0008:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0000.png')]	public var running_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0001.png')]	public var running_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0002.png')]	public var running_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0003.png')]	public var running_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0004.png')]	public var running_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0005.png')]	public var running_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0006.png')]	public var running_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_e0007.png')]	public var running_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0000.png')]	public var running_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0001.png')]	public var running_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0002.png')]	public var running_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0003.png')]	public var running_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0004.png')]	public var running_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0005.png')]	public var running_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0006.png')]	public var running_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_n0007.png')]	public var running_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0000.png')]	public var running_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0001.png')]	public var running_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0002.png')]	public var running_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0003.png')]	public var running_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0004.png')]	public var running_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0005.png')]	public var running_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0006.png')]	public var running_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_ne0007.png')]	public var running_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0000.png')]	public var running_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0001.png')]	public var running_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0002.png')]	public var running_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0003.png')]	public var running_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0004.png')]	public var running_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0005.png')]	public var running_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0006.png')]	public var running_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_nw0007.png')]	public var running_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0000.png')]	public var running_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0001.png')]	public var running_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0002.png')]	public var running_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0003.png')]	public var running_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0004.png')]	public var running_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0005.png')]	public var running_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0006.png')]	public var running_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_s0007.png')]	public var running_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0000.png')]	public var running_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0001.png')]	public var running_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0002.png')]	public var running_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0003.png')]	public var running_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0004.png')]	public var running_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0005.png')]	public var running_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0006.png')]	public var running_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_se0007.png')]	public var running_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0000.png')]	public var running_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0001.png')]	public var running_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0002.png')]	public var running_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0003.png')]	public var running_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0004.png')]	public var running_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0005.png')]	public var running_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0006.png')]	public var running_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_sw0007.png')]	public var running_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0000.png')]	public var running_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0001.png')]	public var running_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0002.png')]	public var running_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0003.png')]	public var running_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0004.png')]	public var running_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0005.png')]	public var running_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0006.png')]	public var running_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/running_w0007.png')]	public var running_w0007:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_e0000.png')]	public var stopped_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_n0000.png')]	public var stopped_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_ne0000.png')]	public var stopped_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_nw0000.png')]	public var stopped_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_s0000.png')]	public var stopped_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_se0000.png')]	public var stopped_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_sw0000.png')]	public var stopped_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/stopped_w0000.png')]	public var stopped_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0000.png')]	public var walking_e0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0001.png')]	public var walking_e0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0002.png')]	public var walking_e0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0003.png')]	public var walking_e0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0004.png')]	public var walking_e0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0005.png')]	public var walking_e0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0006.png')]	public var walking_e0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_e0007.png')]	public var walking_e0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0000.png')]	public var walking_n0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0001.png')]	public var walking_n0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0002.png')]	public var walking_n0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0003.png')]	public var walking_n0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0004.png')]	public var walking_n0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0005.png')]	public var walking_n0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0006.png')]	public var walking_n0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_n0007.png')]	public var walking_n0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0000.png')]	public var walking_ne0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0001.png')]	public var walking_ne0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0002.png')]	public var walking_ne0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0003.png')]	public var walking_ne0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0004.png')]	public var walking_ne0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0005.png')]	public var walking_ne0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0006.png')]	public var walking_ne0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_ne0007.png')]	public var walking_ne0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0000.png')]	public var walking_nw0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0001.png')]	public var walking_nw0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0002.png')]	public var walking_nw0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0003.png')]	public var walking_nw0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0004.png')]	public var walking_nw0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0005.png')]	public var walking_nw0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0006.png')]	public var walking_nw0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_nw0007.png')]	public var walking_nw0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0000.png')]	public var walking_s0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0001.png')]	public var walking_s0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0002.png')]	public var walking_s0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0003.png')]	public var walking_s0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0004.png')]	public var walking_s0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0005.png')]	public var walking_s0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0006.png')]	public var walking_s0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_s0007.png')]	public var walking_s0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0000.png')]	public var walking_se0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0001.png')]	public var walking_se0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0002.png')]	public var walking_se0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0003.png')]	public var walking_se0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0004.png')]	public var walking_se0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0005.png')]	public var walking_se0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0006.png')]	public var walking_se0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_se0007.png')]	public var walking_se0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0000.png')]	public var walking_sw0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0001.png')]	public var walking_sw0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0002.png')]	public var walking_sw0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0003.png')]	public var walking_sw0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0004.png')]	public var walking_sw0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0005.png')]	public var walking_sw0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0006.png')]	public var walking_sw0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_sw0007.png')]	public var walking_sw0007:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0000.png')]	public var walking_w0000:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0001.png')]	public var walking_w0001:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0002.png')]	public var walking_w0002:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0003.png')]	public var walking_w0003:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0004.png')]	public var walking_w0004:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0005.png')]	public var walking_w0005:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0006.png')]	public var walking_w0006:Class;
+		[Embed(source = '../../../assets/red_knight/walking_w0007.png')]	public var walking_w0007:Class;
 		
-		
-		[Embed(source = '../../../assets/red_knight/paused_e0000.png')]	private var paused_e0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0001.png')]	private var paused_e0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0002.png')]	private var paused_e0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0003.png')]	private var paused_e0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0004.png')]	private var paused_e0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0005.png')]	private var paused_e0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0006.png')]	private var paused_e0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0007.png')]	private var paused_e0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_e0008.png')]	private var paused_e0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_n0000.png')]	private var paused_n0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0001.png')]	private var paused_n0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0002.png')]	private var paused_n0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0003.png')]	private var paused_n0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0004.png')]	private var paused_n0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0005.png')]	private var paused_n0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0006.png')]	private var paused_n0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0007.png')]	private var paused_n0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_n0008.png')]	private var paused_n0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_ne0000.png')]	private var paused_ne0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0001.png')]	private var paused_ne0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0002.png')]	private var paused_ne0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0003.png')]	private var paused_ne0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0004.png')]	private var paused_ne0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0005.png')]	private var paused_ne0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0006.png')]	private var paused_ne0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0007.png')]	private var paused_ne0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_ne0008.png')]	private var paused_ne0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_nw0000.png')]	private var paused_nw0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0001.png')]	private var paused_nw0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0002.png')]	private var paused_nw0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0003.png')]	private var paused_nw0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0004.png')]	private var paused_nw0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0005.png')]	private var paused_nw0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0006.png')]	private var paused_nw0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0007.png')]	private var paused_nw0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_nw0008.png')]	private var paused_nw0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_s0000.png')]	private var paused_s0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0001.png')]	private var paused_s0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0002.png')]	private var paused_s0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0003.png')]	private var paused_s0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0004.png')]	private var paused_s0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0005.png')]	private var paused_s0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0006.png')]	private var paused_s0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0007.png')]	private var paused_s0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_s0008.png')]	private var paused_s0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_se0000.png')]	private var paused_se0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0001.png')]	private var paused_se0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0002.png')]	private var paused_se0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0003.png')]	private var paused_se0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0004.png')]	private var paused_se0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0005.png')]	private var paused_se0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0006.png')]	private var paused_se0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0007.png')]	private var paused_se0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_se0008.png')]	private var paused_se0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_sw0000.png')]	private var paused_sw0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0001.png')]	private var paused_sw0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0002.png')]	private var paused_sw0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0003.png')]	private var paused_sw0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0004.png')]	private var paused_sw0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0005.png')]	private var paused_sw0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0006.png')]	private var paused_sw0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0007.png')]	private var paused_sw0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_sw0008.png')]	private var paused_sw0008:Class;
-		
-		[Embed(source = '../../../assets/red_knight/paused_w0000.png')]	private var paused_w0000:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0001.png')]	private var paused_w0001:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0002.png')]	private var paused_w0002:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0003.png')]	private var paused_w0003:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0004.png')]	private var paused_w0004:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0005.png')]	private var paused_w0005:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0006.png')]	private var paused_w0006:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0007.png')]	private var paused_w0007:Class;
-		[Embed(source = '../../../assets/red_knight/paused_w0008.png')]	private var paused_w0008:Class;
-		
-		public var cacheData:Object;
-		public var isCachedValue:Boolean;
 		
 		public var description:XML = <desc>
+				<anim name="stopped" size="1"/>
+				<anim name="been_hit" size="9"/>
+				<anim name="greeting" size="9"/>
+				<anim name="walking" size="8"/>
+				<anim name="attack" size="13"/>
 				<anim name="paused" size="9"/>
-				<anim name="run" size="9"/>
-				<anim name="attack" size="9"/>
+				<anim name="running" size="8"/>
 			</desc>;
 		
-		public function RedKnight() 
-		{
-			isCachedValue = false;
-		}
 		
-		/* INTERFACE julio.resource.ICharAsset */
-		
-		public function isCached():Boolean
-		{
-			return isCachedValue;
-		}
-		
-		private function addZeros(inputNumber:int, stringLength:int):String
-		{
-			var ret:String = String(inputNumber);
-			while (ret.length < stringLength)
-			{
-				ret = "0" + ret;
-			}
-			return ret;
-		}
-		
-		public function cache():void 
-		{
-			
-			cacheData = new Object;
-			
-			var aniDir:Array = ["ne", "nw", "se", "sw", "s", "w", "n", "e"];
-			
-			for each( var s:XML in description.anim )
-			{
-				var name:String = s.@name;
-				var size:int = int(s.@size);
-				
-				cacheData[name] = new Object;
-				
-				for ( var b:int = 0; b < aniDir.length; b++ )
-				{
-					cacheData[name][aniDir[b]] = new Vector.<Bitmap>;
-					
-					for ( var c:int = 0; c < size; c++ )
-					{
-						// paused_e0000
-						cacheData[name][aniDir[b]].push( Bitmap(new this[name + "_" + aniDir[b] + addZeros(c, 4)]()) );
-					}
-				}
-			}
-			
-			isCachedValue = true;
-		}
-		
-		public function sizeX():int 
-		{
-			return 96;
-		}
-		
-		public function sizeY():int 
-		{
-			return 96;
-		}
-		
-		public function desc():XML 
+		public override function desc():XML 
 		{
 			return description;
 		}
-		
-		public function data(name:String, dir:String, frame:int):Bitmap
-		{
-			trace("RedKnight::data() "+ name + "/" + dir + "/" + frame);
-			return cacheData[name][dir][frame];
-		}
+
 	}
 
 }

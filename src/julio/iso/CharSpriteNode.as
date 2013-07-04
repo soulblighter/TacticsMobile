@@ -7,7 +7,7 @@
 	import flash.media.SoundChannel;
 	import julio.iso.*;
 	import julio.scenegraph.*;
-	import julio.resource.ICharAsset;
+	import julio.resource.CharAsset;
 //	import br.com.stimuli.loading.BulkProgressEvent;
 //	import br.com.stimuli.loading.lazyloaders.LazyXMLLoader;
 	
@@ -40,7 +40,7 @@
 		// Loader utilizado para carregar o swf com as animações
 //		private var _loader2:Loader;
 		
-		public function CharSpriteNode( charAsset:ICharAsset, pos:Number3D, rot:Quaternion, size:Number3D, nodeName:String, renderPriority:uint = 0, onlyDefaultRender:Boolean = false )
+		public function CharSpriteNode( charAsset:CharAsset, pos:Number3D, rot:Quaternion, size:Number3D, nodeName:String, renderPriority:uint = 0, onlyDefaultRender:Boolean = false )
 		{
 			super(Bitmap, pos, rot, size, nodeName, renderPriority, onlyDefaultRender);
 			

@@ -21,7 +21,7 @@
 	import julio.AssetsManager;
 	import julio.iso.*;
 	import julio.iso.events.TerrainBlockEvent;
-	import julio.resource.ICharAsset;
+	import julio.resource.CharAsset;
 	import julio.scenegraph.*;
 	import julio.tactics.*;
 //	import julio.tactics.display.ActionsPanel;
@@ -547,7 +547,7 @@
 			//	<char id="0" pos="0"> <display asset="Fighter_high"/> </char>
 			
 //			var assetClass:Class = _queueLoader.getItemByTitle(data.display.@asset).loader.contentLoaderInfo.applicationDomain.getDefinition("ImageAsset");
-			var assetClass:ICharAsset = this._assets.getChar(String(data.display.@asset));
+			var assetClass:CharAsset = this._assets.getChar(String(data.display.@asset));
 			
 			var pos3d:Number3D = map.getPos(data.@pos);
 			var char_x:int = pos3d.x;

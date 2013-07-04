@@ -26,7 +26,7 @@
 		protected var _renderPriority:uint;			// prioridade da renderização do objeto (maior siginifica q o objeto ficará por cima dos outros)
 		protected var _displayType:Class;			// Tipo do displayObject q será utilizado
 		protected var _regPoints:Number2D;			// Pontos q deslocam a posição final do objeto
-		protected var _depthPoints:Number3D;		// Pontos q deslocam a posição final do objeto na hora de fazer o sawp depth
+		protected var _depthPoints:Number3D;		// Pontos q deslocam a posição final do objeto na hora de fazer o swap depth
 		protected var _renderChanged:Boolean;		// Marca se eh necessario recalcula o depth do objeto
 //		protected var _zoom:Number;					// Escala a imagem bitmap
 		protected var _debugBox:Box;

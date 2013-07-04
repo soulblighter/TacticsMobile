@@ -11,7 +11,8 @@ package julio
 	import flash.system.ApplicationDomain;
 	import flash.system.LoaderContext;
 	import flash.system.SecurityDomain;
-	import julio.resource.ICharAsset;
+	import julio.resource.CharAsset;
+	import julio.resource.HarryTheOrc;
 	import julio.resource.RedKnight;
 	import julio.tactics.events.GameEvent;
 	import julio.iso.MultBitmap2;
@@ -36,8 +37,8 @@ package julio
 		private var totalNum:int;
 		private var loadedNum:int;
 		
-		[Embed(source = '../../assets/Fighter_high_dbg.swf')]
-		private var Fighter_high_dbg:Class;
+//		[Embed(source = '../../assets/Fighter_high_dbg.swf')]
+//		private var Fighter_high_dbg:Class;
 		
 		[Embed(source = '../../assets/tiles2.gif')]
 		private var tiles2:Class;
@@ -64,9 +65,7 @@ package julio
 			totalNum = 0;
 			loadedNum = 0;
 			
-			_loaderContext = new LoaderContext( false, new ApplicationDomain(ApplicationDomain.currentDomain), null );
-			
-			
+//			_loaderContext = new LoaderContext( false, new ApplicationDomain(ApplicationDomain.currentDomain), null );
 //			_queueLoader = new QueueLoader(false, _loaderContext );//false, addedDefinitions, true, "defaultQueue");
 		}
 		
@@ -78,7 +77,7 @@ package julio
 		
 		private function fromEmbed():void
 		{
-			var _fighter:ICharAsset = new RedKnight();
+			var _fighter:CharAsset = new HarryTheOrc();// RedKnight();
 //			var _fighter_o:Object = _fighter.contentLoaderInfo.applicationDomain.getDefinition("ImageAsset");
 //			var _tiles2:MultBitmap2 = new MultBitmap2(Bitmap(new tiles2()).bitmapData, 3, 3);
 			var _tiles2:MultBitmap2 = new MultBitmap2(Bitmap(new tiles2() as Bitmap).bitmapData, 3, 3);
@@ -86,7 +85,7 @@ package julio
 			var _level3:XML = XML(new level3());
 			var _defense_lvl_1:XML = XML(new defense_lvl_1());
 			
-			this._char["Fighter_high"] = _fighter;// .loader.contentLoaderInfo.applicationDomain.getDefinition("ImageAsset");
+			this._char["Fighter_high"] = _fighter;
 			this._tile["tiles"] = _tiles2;
 			this._tile["defense_tiles"] = _defense_tiles;
 			this._data["map"] = _level3;
@@ -182,7 +181,7 @@ package julio
 			return this._tile[id];
 		}
 		
-		public function getChar(id:String):ICharAsset
+		public function getChar(id:String):CharAsset
 		{
 			return this._char[id];
 		}
