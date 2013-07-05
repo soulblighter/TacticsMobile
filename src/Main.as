@@ -16,6 +16,7 @@ package
 	import flash.events.EventDispatcher;
 	import julio.tactics.events.GameEvent;
 	import julio.AssetsManager;
+	import julio.tactics.view.ConsoleView;
 	
 	
 	/**
@@ -313,6 +314,7 @@ package
 			
 			var redKnight:RedKnight = new RedKnight();
 			this.addChild(new CenaBatalha(conm, assets));
+			this.addChild(new ConsoleView(conm, assets));
 			
 			var b:Batalha = new Batalha(conm, gameData);
 			b.run();

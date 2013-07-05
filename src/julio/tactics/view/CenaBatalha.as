@@ -30,9 +30,6 @@
 	import julio.tactics.events.BattleEvent;
 	import julio.tactics.events.DisplayEvent;
 	import julio.tactics.regras.GlobalDispatcher;
-	import julio.tactics.regras.GURPS.*;
-	import julio.tactics.regras.GURPS.batalha.*;
-	import julio.tactics.regras.GURPS.batalha.Batalha;
 	
 	/**
 	 * ...
@@ -45,7 +42,7 @@
 		
 		private var _gameTimer:GameTimer;
 		private var _clickDelay:Number; // tempo para reconhecer um botao apertado depois do outro
-		private var _batalha:Batalha;
+//		private var _batalha:Batalha;
 		private var _zoom:Number;
 		
 		// fps display
@@ -560,9 +557,10 @@
 			var cNode:CharSpriteNode = new CharSpriteNode(assetClass, new Number3D(char_x * tileSize.x + tileSize.x / 2, char_y * tileSize.y, char_z * tileSize.z + tileSize.z / 2), new Quaternion(0, 1, 0, Math.PI / 2), new Number3D(30, 70, 30), data.@id);
 //			cNode.local_pos_y = char_y*map.size.y; // map.getHeight( cNode.local_pos_x, cNode.local_pos_z );
 //			cNode.update(0, new Matrix3D, false);
-			cNode.changeAnimation("attack");
+			cNode.changeAnimation("running");
 			cNode.AnimTime = 500;
-			cNode.gotoAndStop(0);
+			cNode.play(-1);
+			//cNode.gotoAndStop(0);
 //			cNode.stop();
 			cNode.dispatcher = GlobalDispatcher.dispatcher;
 			

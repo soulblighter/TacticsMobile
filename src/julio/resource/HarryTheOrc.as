@@ -465,13 +465,13 @@ package julio.resource
 		
 		
 		public var description:XML = <desc>
-				<anim name="stopped" size="1"/>
-				<anim name="talking" size="9"/>
-				<anim name="been_hit" size="9"/>
-				<anim name="walking" size="8"/>
-				<anim name="attack" size="13"/>
-				<anim name="paused" size="9"/>
-				<anim name="running" size="8"/>
+				<anim name="stopped"	length="1" size_x="96" size_y="96" />
+				<anim name="talking"	length="9" size_x="96" size_y="96" />
+				<anim name="been_hit"	length="9" size_x="96" size_y="96" />
+				<anim name="walking"	length="8" size_x="96" size_y="96" />
+				<anim name="attack"		length="13" size_x="96" size_y="96" />
+				<anim name="paused"		length="9" size_x="96" size_y="96" />
+				<anim name="running"	length="8" size_x="96" size_y="96" />
 			</desc>;
 		
 		

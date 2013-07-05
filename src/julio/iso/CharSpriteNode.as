@@ -49,13 +49,13 @@
 			_animations = new Object;
 			for each( var s:XML in desc.anim )
 			{
-				_animations[s.@name] = s.@size;
+				_animations[s.@name] = s.@length;
 			}
 			
 			//_animations =  //CharAsset["desc"]();// ["attack", "hit", "run", "death"];
 			_aniDir = ["ne", "nw", "se", "sw"];
 			
-			_currentAnim = "run";
+			_currentAnim = "running";
 			_currentDir = "se";
 			frameAmount = _animations[_currentAnim];
 			
@@ -70,15 +70,15 @@
 				}
 			}
 			
-			_regPoints.x = - charAsset["sizeX"] / 2.0; // -64;
-			_regPoints.y = - charAsset["sizeY"] * 0.75; // -96;
-			_depthPoints.x = - charAsset["sizeX"] * 0.1; // - 10;
-			_depthPoints.z = - charAsset["sizeY"] * 0.1; // - 10;
+			_regPoints.x = - charAsset.sizeX() / 2.0; // -64;
+			_regPoints.y = - charAsset.sizeY() * 0.75; // -96;
+			_depthPoints.x = - charAsset.sizeX() * 0.1; // - 10;
+			_depthPoints.z = - charAsset.sizeY() * 0.1; // - 10;
 			
 			for ( var a2:String in _animations )
-				for ( var b2:int = 0; b2 < _aniDir.length; b2++ )
+				for each( var b2:String in _aniDir )
 					for ( var c2:int = 0; c2 < _animations[a2]; c2++ )
-						_frames[a2][_aniDir[b2]].push( charAsset.data(a2, _aniDir[b2], c2) );
+						_frames[a2][b2].push( charAsset.data(a2, b2, c2) );
 			
 //						_frames[a2][_aniDir[b2]].push( CharAsset["data"](a2+"_"+_aniDir[b2]+"_"+c2) as BitmapData );
 			
@@ -108,7 +108,7 @@
 		
 		public function startRunning():void
 		{
-			this.animation = "run";
+			this.animation = "running";
 		}
 		public function endAnimation():void
 		{
