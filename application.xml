@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<application xmlns="http://ns.adobe.com/air/application/3.7">
+<application xmlns="http://ns.adobe.com/air/application/3.9">
   <id>air.TacticsMobile</id>
   <versionNumber>0.1</versionNumber>
-  <supportedProfiles>mobileDevice</supportedProfiles>
+  <supportedProfiles>desktop extendedDesktop mobileDevice</supportedProfiles>
   <filename>TacticsMobile</filename>
   <name>TacticsMobile</name>
   <android>
@@ -37,12 +37,16 @@
     <fullScreen>true</fullScreen>
     <!--<autoOrients>false</autoOrients>-->
     <!--<aspectRatio>landscape</aspectRatio>-->
-    <renderMode>cpu</renderMode>
+    <renderMode>direct</renderMode>
     <!--<depthAndStencil>true</depthAndStencil>-->
     <!-- required for 3D -->
     <systemChrome>standard</systemChrome>
     <aspectRatio>landscape</aspectRatio>
     <autoOrients>false</autoOrients>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
   </initialWindow>
   <icon>
     <image48x48>icons/icon_48.png</image48x48>

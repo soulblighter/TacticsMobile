@@ -13,12 +13,13 @@
 	import flash.events.TimerEvent;
 	import flash.text.TextField;
 	import flash.ui.Keyboard;
-	import flash.utils.getTimer;
+	
 	import flash.utils.Timer;
 	import gs.*;
 	import gs.easing.*;
 	import gs.plugins.*;
 	import julio.AssetsManager;
+	import julio.display.FpsDisplay;
 	import julio.iso.*;
 	import julio.iso.events.TerrainBlockEvent;
 	import julio.resource.CharAsset;
@@ -46,14 +47,9 @@
 		private var _zoom:Number;
 		
 		// fps display
-		public var _fpsText:TextField;
-		public var _fpsLastTime:Number;
-		public var _frameCount:Number;
-		public var _FPS:Number;
-		public var _fpsTimeElapsed:Number;
+		public var _FPS:FpsDisplay;
+		
 		public var _timer:Timer;
-		public var _fpsCurrentTime:Number;
-		public var _fpsTimeDelta:Number;
 		
 		private var count:Number;
 		private var map:Terrain;
@@ -121,16 +117,9 @@
 			this._clickDelay = 100;
 			
 			// FPS
-			_frameCount = 0;
-			_FPS = 0;
-			_fpsTimeElapsed = 0;
-			_fpsLastTime = getTimer();
-			_fpsText = new TextField();
-			_fpsText.text = "0";
-			_fpsText.selectable = false;
-			_fpsText.textColor = 0xFF0000;
-			_fpsText.x = 10;
-			_fpsText.y = 10;
+			_FPS = new FpsDisplay();
+			_FPS.x = 10;
+			_FPS.y = 10;
 			
 			displayQueue = new Array;
 			displayLock = false;
@@ -151,7 +140,8 @@
 			scene.defaultView.addNode(scene.root, true);
 			
 //			this.addChild(combatlog);
-			this.addChild(_fpsText);
+//			this.addChild(_fpsText);
+			this.addChild(_FPS);
 			TweenPlugin.activate([BezierPlugin]);
 			
 			scene.defaultView.x_pos -= 400;
@@ -317,23 +307,7 @@
 		
 		public function render(framevent:Event):void
 		{
-			this._fpsCurrentTime = getTimer();
-			this._fpsTimeDelta = this._fpsCurrentTime - this._fpsLastTime;
-			this._fpsText.text = "FPS: " + String(Math.round(calcFPS(this._fpsTimeDelta) * 1000));
-			this._fpsLastTime = this._fpsCurrentTime;
-		}
-		
-		public function calcFPS(fpsTimeDelta:Number):Number
-		{
-			_frameCount++;
-			_fpsTimeElapsed += _fpsTimeDelta
-			if (_fpsTimeElapsed >= 1000.0)
-			{
-				_FPS = _frameCount / _fpsTimeElapsed;
-				_fpsTimeElapsed = 0.0;
-				_frameCount = 0;
-			}
-			return _FPS;
+			_FPS.update();
 		}
 		
 		public function onKeyPress(keyboardEvent:KeyboardEvent):void
@@ -404,7 +378,7 @@
 								// atacante muda de animação para attack
 								_conm.dispatchEvent(new DisplayInstruction(DisplayInstruction.ANIMATION, <animation target={e.data.@subject} value="attack" reset="true" play="true" loop="false"/>, true));
 								// alvo muda de animação para hit
-								_conm.dispatchEvent(new DisplayInstruction(DisplayInstruction.ANIMATION, <animation target={e.data.@object} value="hit" reset="true" play="true" loop="false"/>, true));
+								_conm.dispatchEvent(new DisplayInstruction(DisplayInstruction.ANIMATION, <animation target={e.data.@object} value="been_hit" reset="true" play="true" loop="false"/>, true));
 								// mostra dano
 								_conm.dispatchEvent(new DisplayInstruction(DisplayInstruction.SHOW_DAMAGE, <damage target={e.data.@object} value={e.data.@damage} color="0xff0000" duration="2"/>, true));
 							} else if (e.data.@result == "miss")
@@ -437,7 +411,6 @@
 			}
 			else
 			{
-				
 				executeDisplayEvent(e);
 			}
 		}
@@ -530,7 +503,7 @@
 			
 			map = new Terrain(data, multBitmap, new Number3D(0, 0, 0), new Quaternion(0, 0, 0, 0), new Number3D(tileSize.x, tileSize.y, tileSize.z), "map");
 			map.local_pos_x = 0;
-			map.local_pos_z = 0;
+			map.local_pos_z = 0; 
 			scene.root.addChildNode(map);
 			scene.root.update(0, Matrix3D.IDENTITY, true);
 			scene.addToAllViews(map, true);
@@ -876,7 +849,6 @@
 //			var alcance:Array = this._batalha.grafo.alcance( this._batalha.grafo.pos2id(e.data.@x, e.data.@z), select.@alcance, true, true );
 			
 			var alcance:Array = String(data.@tiles).split(",");
-			
 //			var n:int = 13;
 //			var area:Array = String(data.selection.(@id == n).@area).split(",");
 			

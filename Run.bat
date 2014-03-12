@@ -14,7 +14,7 @@ set INTERPRETER=-interpreter
 :desktop
 :: http://help.adobe.com/en_US/air/build/WSfffb011ac560372f-6fa6d7e0128cca93d31-8000.html
 
-set SCREEN_SIZE=NexusOne
+set SCREEN_SIZE=720
 ::set SCREEN_SIZE=iPhoneRetina
 
 :desktop-run
@@ -23,7 +23,7 @@ echo Starting AIR Debug Launcher with screen size '%SCREEN_SIZE%'
 echo.
 echo (hint: edit 'Run.bat' to test on device or change screen size)
 echo.
-adl -screensize %SCREEN_SIZE% "%APP_XML%" "%APP_DIR%"
+adl "%APP_XML%" "%APP_DIR%"
 if errorlevel 1 goto end
 goto end
 
@@ -103,4 +103,4 @@ echo.
 echo Installing the app on the device failed
 
 :end
-::pause
+pause

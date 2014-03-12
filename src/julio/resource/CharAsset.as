@@ -37,7 +37,7 @@ package julio.resource
 			for each( var s:XML in tempDesc.anim )
 			{
 				var name:String = s.@name;
-				var size:int = int(s.@size);
+				var size:int = int(s.@length);
 				
 				cacheData[name] = new Object;
 				

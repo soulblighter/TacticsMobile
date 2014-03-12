@@ -204,6 +204,7 @@ package julio.tactics.view
 		private function addtxt2console( txt:String ):void
 		{
 			_textArea.htmlText += txt;
+			_textArea.scrollV = _textArea.bottomScrollV;
 //			_textArea.validateNow();
 //			_textArea.verticalScrollPosition = _textArea.height;
 		}

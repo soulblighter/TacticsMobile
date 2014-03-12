@@ -146,6 +146,16 @@
 */
 		public function changeAnimation( anim:String, reset:Boolean = true ):void
 		{
+			var found:Boolean = false;
+			for ( var a:String in _animations )
+			{
+				if (anim == a)
+				found = true;
+			}
+			if (!found)
+				throw new Error(anim+" not found on "+this);
+			
+			
 			_currentAnim = anim;
 			frameAmount = _animations[_currentAnim];
 			

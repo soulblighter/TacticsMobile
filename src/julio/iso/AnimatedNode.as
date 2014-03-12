@@ -8,8 +8,9 @@
 	import flash.display.DisplayObjectContainer;
 	import flash.display.Sprite;
 	import flash.events.Event;
-	import com.hexagonstar.display.FrameRateTimer;
-	import com.hexagonstar.env.event.FrameEvent;
+//	import com.hexagonstar.display.FrameRateTimer;
+//	import com.hexagonstar.env.event.FrameEvent;
+	import flash.utils.Timer;
 	import flash.events.EventDispatcher;
 	import flash.events.TimerEvent;
 	import julio.iso.events.AnimationNodeEvent;
@@ -20,7 +21,7 @@
 	public class AnimatedNode extends DisplayNode
 	{
 		protected var _dispatcher:EventDispatcher;
-		protected var _timer:FrameRateTimer;	// temporizador da animação
+		protected var _timer:Timer;	// temporizador da animação
 		protected var _isPlaying:Boolean;		// determina se a animação esta funcionando ou parada
 		protected var _loop:int;			// marca quantas vezes a animação deve repetir, valor negativo repete infinitamente
 		protected var _enableEvents:Boolean;
@@ -34,12 +35,14 @@
 //		private var _atualPorc:uint;		// porcentagem atual da animação
 		private var _frameStart:uint;		// frame q a animação deve começar
 		private var _frameEnd:uint;			// frame q a animação deve terminar
+		private var _animFps:uint;
 		
 		public function AnimatedNode( displayType:Class, pos:Number3D, rot:Quaternion, size:Number3D, nodeName:String, renderPriority:uint = 0, onlyDefaultRender:Boolean = true )
 		{
 			super(displayType, pos, rot, size, nodeName, renderPriority, onlyDefaultRender);
 			
 			_baseAnimTime = 2000;		// 0,5 segundos 
+			_animFps = 1;
 			
 			_frameNr = 0;
 			_frameAmount = 0;
@@ -52,7 +55,7 @@
 			
 			_loop = -1;
 			_isPlaying = false;
-			_timer = new FrameRateTimer();
+			_timer = new Timer(1000/_animFps);
 			_enableEvents = false;
 //			_dispatcher = new EventDispatcher;
 		}
@@ -77,7 +80,7 @@
 		public function set loop( value:int ):void { this._loop = value; };
 		
 		protected function get frameAmount():uint { return this._frameAmount; };
-		protected function set frameAmount( value:uint ):void { this._frameAmount = value; if (value > 0) setFrameRateTimer( AnimTime / value); };
+		protected function set frameAmount( value:uint ):void { this._frameAmount = value; if (value > 0) setFrameRate( AnimTime / frameAmount); };
 		
 		protected function get lastFrame():uint { if (frameAmount > 0) { return frameAmount - 1; } else return 0; }
 		
@@ -85,7 +88,7 @@
 		protected function set frameNr( value:uint ):void { if (value >= frameAmount) value = frameAmount - 1; this._frameNr = value; };
 		
 		public function get AnimTime():uint { return this._baseAnimTime; };
-		public function set AnimTime( value:uint ):void { this._baseAnimTime = value; if (frameAmount > 0) setFrameRateTimer( AnimTime / frameAmount); };
+		public function set AnimTime( value:uint ):void { this._baseAnimTime = value; if (frameAmount > 0) setFrameRate( AnimTime / frameAmount); };
 		
 		public function gotoAndPlay( value:uint ):void
 		{
@@ -104,12 +107,13 @@
 			stop();
 		}
 		
-		protected function setFrameRateTimer( value:Number ):void // timer:FrameRateTimer
+		protected function setFrameRate( value:uint ):void // timer:FrameRateTimer
 		{
 //			if (_isPlaying)
 //			{
 //				stop();
-				_timer.delay = value;// = timer;
+				_animFps = value;
+				_timer.delay = _animFps;// = timer;
 //				play();
 //			}
 //			else
@@ -118,9 +122,9 @@
 //			}
 		}
 		
-		public function getFrameRate():int
+		public function getFrameRate():uint
 		{
-			return _timer.getFrameRate();
+			return 1000/_timer.delay;
 		}
 		
 		public function getCurrentFrame():int

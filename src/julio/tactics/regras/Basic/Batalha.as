@@ -368,7 +368,7 @@
 					//		<step type="DJUMP" value="16"/>
 					//		<step type="SIMPLE" value="15"/>
 					//	</move>
-					var path:XML = <move target={this.subjectID} animation="run" start={subject.idPos} end={subjSelectedTargetID} />;
+					var path:XML = <move target={this.subjectID} animation="running" start={subject.idPos} end={subjSelectedTargetID} />;
 					
 					for ( var s:int = 1; s < caminho.length; s++ )
 						//path.appendChild(<step type={caminho[s].type} value={caminho[s].id}/>);

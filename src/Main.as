@@ -12,6 +12,7 @@ package
 	import flash.events.TimerEvent;
 	import julio.resource.RedKnight;
 	import julio.tactics.view.CenaBatalha;
+	import julio.tactics.view.CenaEvento;
 	import julio.tactics.regras.Basic.Batalha;
 	import flash.events.EventDispatcher;
 	import julio.tactics.events.GameEvent;
@@ -312,12 +313,13 @@ package
 					
 				</battle>;
 			
-			var redKnight:RedKnight = new RedKnight();
 			this.addChild(new CenaBatalha(conm, assets));
 			this.addChild(new ConsoleView(conm, assets));
 			
 			var b:Batalha = new Batalha(conm, gameData);
 			b.run();
+			
+			//this.addChild(new CenaEvento(conm, assets));
 		}
 		
 	}

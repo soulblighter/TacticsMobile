@@ -49,7 +49,6 @@
 			this._rot = rot;
 			this._size = size;
 			this._transformation = new Matrix3D();
-			this._transformation.clear();
 			this._tempMatrix = new Matrix3D();
 			this._transformChanged = true;
 			
@@ -91,10 +90,10 @@
 			local_scale_x = x;
 			local_scale_y = y;
 			local_scale_z = z;
-			for each( var tempNode:Node in this._childs )
-			{
-				tempNode.zoom(x, y, z)
-			}
+			//for each( var tempNode:Node in this._childs )
+			//{
+			//	tempNode.zoom(x, y, z)
+			//}
 		}
 		
 		// rotation

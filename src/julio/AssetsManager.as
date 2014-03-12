@@ -1,7 +1,7 @@
 package julio
 {
-	import com.hydrotik.queueloader.QueueLoader;
-	import com.hydrotik.queueloader.QueueLoaderEvent;
+//	import com.hydrotik.queueloader.QueueLoader;
+//	import com.hydrotik.queueloader.QueueLoaderEvent;
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
@@ -26,7 +26,7 @@ package julio
 	{
 		private var _comm:EventDispatcher;
 		private var _assets:XML;
-		private var _queueLoader:QueueLoader;
+//		private var _queueLoader:QueueLoader;
 		private var _loaderContext:LoaderContext
 		
 		private var _char:Object;
@@ -77,7 +77,7 @@ package julio
 		
 		private function fromEmbed():void
 		{
-			var _fighter:CharAsset = new HarryTheOrc();// RedKnight();
+			var _fighter:CharAsset = new HarryTheOrc();// RedKnight();//
 //			var _fighter_o:Object = _fighter.contentLoaderInfo.applicationDomain.getDefinition("ImageAsset");
 //			var _tiles2:MultBitmap2 = new MultBitmap2(Bitmap(new tiles2()).bitmapData, 3, 3);
 			var _tiles2:MultBitmap2 = new MultBitmap2(Bitmap(new tiles2() as Bitmap).bitmapData, 3, 3);
@@ -128,12 +128,12 @@ package julio
 			}
 			
 		}
-		
+/*
 		public function loading( e:QueueLoaderEvent ):void
 		{
 			trace( (100*e.queuepercentage) + "%" );
 		}
-		
+	
 		public function finishedLoading( e:QueueLoaderEvent ):void
 		{
 //			trace(e);
@@ -175,7 +175,7 @@ package julio
 			
 			this._comm.dispatchEvent( new GameEvent( GameEvent.FINISHED_LOADING ) );
 		}
-		
+*/	
 		public function getTile(id:String):MultBitmap2
 		{
 			return this._tile[id];
